@@ -8,7 +8,7 @@ import rx.subscriptions.CompositeSubscription;
 /**
  * Created by jess on 16/4/28.
  */
-public class BasePresenter<M extends IModel, V extends BaseView> implements Presenter {
+public class BasePresenter<M extends IModel, V extends IView> implements IPresenter {
     protected final String TAG = this.getClass().getSimpleName();
     protected CompositeSubscription mCompositeSubscription;
 
@@ -43,10 +43,9 @@ public class BasePresenter<M extends IModel, V extends BaseView> implements Pres
         if (useEventBus())//如果要使用eventbus请将此方法返回true
             EventBus.getDefault().unregister(this);//解除注册eventbus
         unSubscribe();//解除订阅
-        if (mModel != null) {
+        if (mModel != null)
             mModel.onDestroy();
-            this.mModel = null;
-        }
+        this.mModel = null;
         this.mRootView = null;
         this.mCompositeSubscription = null;
     }

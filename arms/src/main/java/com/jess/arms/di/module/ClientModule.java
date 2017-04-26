@@ -2,8 +2,8 @@ package com.jess.arms.di.module;
 
 import android.app.Application;
 
-import com.jess.arms.base.AppManager;
-import com.jess.arms.http.RequestIntercept;
+import com.jess.arms.http.GlobalHttpHandler;
+import com.jess.arms.http.RequestInterceptor;
 import com.jess.arms.utils.DataHelper;
 
 import java.io.File;
@@ -32,12 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class ClientModule {
     private static final int TIME_OUT = 10;
-    private AppManager mAppManager;
 
-
-    public ClientModule(AppManager appManager) {
-        this.mAppManager = appManager;
-    }
 
     /**
      * @param builder
@@ -68,15 +63,14 @@ public class ClientModule {
     @Singleton
     @Provides
     OkHttpClient provideClient(OkHttpClient.Builder okHttpClient, Interceptor intercept
-            , List<Interceptor> interceptors) {
+            , List<Interceptor> interceptors, GlobalHttpHandler handler) {
         OkHttpClient.Builder builder = okHttpClient
                 .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .readTimeout(TIME_OUT, TimeUnit.SECONDS)
+                .addInterceptor(chain -> chain.proceed(handler.onHttpRequestBefore(chain, chain.request())))
                 .addNetworkInterceptor(intercept);
         if (interceptors != null && interceptors.size() > 0) {//如果外部提供了interceptor的数组则遍历添加
-            for (Interceptor interceptor : interceptors) {
-                builder.addInterceptor(interceptor);
-            }
+            interceptors.forEach(builder::addInterceptor);
         }
         return builder
                 .build();
@@ -97,11 +91,9 @@ public class ClientModule {
     }
 
 
-
-
     @Singleton
     @Provides
-    Interceptor provideIntercept(RequestIntercept intercept) {
+    Interceptor provideInterceptor(RequestInterceptor intercept) {
         return intercept;//打印请求信息的拦截器
     }
 
@@ -148,17 +140,6 @@ public class ClientModule {
                 .build();
     }
 
-
-    /**
-     * 提供管理所有activity的管理类
-     *
-     * @return
-     */
-    @Singleton
-    @Provides
-    AppManager provideAppManager() {
-        return mAppManager;
-    }
 
 
 //    .addNetworkInterceptor(new Interceptor() {
