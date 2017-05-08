@@ -64,6 +64,7 @@ dependencies {
     compile project(':arms')
 //    compile 'me.jessyan:arms:1.6.3'
     //test
+    // constraint-layout
     compile "com.android.support.constraint:constraint-layout:+"
 
     testCompile rootProject.ext.dependencies["junit"]
