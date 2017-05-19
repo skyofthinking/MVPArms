@@ -1,9 +1,8 @@
 # MVPArms 
-[ ![Bintray](https://img.shields.io/badge/bintray-v1.6.3-brightgreen.svg) ](https://bintray.com/jessyancoding/maven/MVPArms/1.6.3/link)
+[ ![Bintray](https://img.shields.io/badge/bintray-v2.0.2-brightgreen.svg) ](https://bintray.com/jessyancoding/maven/MVPArms/2.0.2/link)
 [ ![Build Status](https://travis-ci.org/JessYanCoding/MVPArms.svg?branch=master) ](https://travis-ci.org/JessYanCoding/MVPArms)
 [ ![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat-square) ](https://developer.android.com/about/versions/android-4.0.3.html)
 [ ![License](http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square) ](http://www.apache.org/licenses/LICENSE-2.0)
-[ ![Support](https://img.shields.io/badge/Support-RxJava2-blue.svg) ](https://github.com/JessYanCoding/MVPArms/tree/rx2)
 [ ![QQGroup](https://img.shields.io/badge/QQ群-301733278-ff69b4.svg) ](https://shang.qq.com/wpa/qunwpa?idkey=1a5dc5e9b2e40a780522f46877ba243eeb64405d42398643d544d3eec6624917)
 
 ## A common Architecture for Android Applications developing based on MVP，integrates many Open Source Projects( like Dagger2,Rxjava,Retrofit... ),to make your developing quicker and easier. 
