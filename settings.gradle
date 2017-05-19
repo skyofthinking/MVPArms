@@ -1,1 +1,1 @@
-include ':app', ':arms', ':busline'
+include ':app', ':arms', ':busline', ':test'
