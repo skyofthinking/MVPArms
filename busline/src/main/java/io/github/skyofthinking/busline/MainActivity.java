@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         // toolbar.setLogo(R.drawable.ic_launcher);
-        mToolbar.setTitle("Rocko");// 标题的文字需在setSupportActionBar之前，不然会无效
-        mToolbar.setSubtitle("副标题");
+        mToolbar.setTitle("标题");// 标题的文字需在setSupportActionBar之前，不然会无效
+        mToolbar.setSubtitle("子标题");
         setSupportActionBar(mToolbar);
     }
 
