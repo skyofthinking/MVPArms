@@ -1,1 +1,1 @@
-include ':app', ':arms', ':busline', ':test'
+include ':app', ':arms', ':busline', ':test', ':citypicker'

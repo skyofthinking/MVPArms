@@ -19,6 +19,22 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".CityPickerUseActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CityPicker.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
+
+        <activity
+            android:name="com.zaaach.citypicker.CityPickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CityPicker.NoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="cfcc4aa44e900b6e30d5840b7f5c4132"/>
     </application>
 
 </manifest>

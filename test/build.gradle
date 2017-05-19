@@ -66,6 +66,8 @@ dependencies {
     // constraint-layout
     compile "com.android.support.constraint:constraint-layout:+"
 
+    compile project(':citypicker')
+
     testCompile rootProject.ext.dependencies["junit"]
     debugCompile rootProject.ext.dependencies["canary-debug"]
     releaseCompile rootProject.ext.dependencies["canary-release"]
