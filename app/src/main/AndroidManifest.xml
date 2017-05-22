@@ -41,7 +41,7 @@
 
         <!--arms配置-->
         <meta-data
-            android:name="me.jessyan.mvparms.demo.app.GlobalConfiguration"
+            android:name="io.github.skyofthinking.busline.GlobalConfiguration"
             android:value="ConfigModule"/>
 
     </application>

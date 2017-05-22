@@ -1,11 +1,20 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--用 toolbar 需添加-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="toolbarStyle">@style/ClubToolbar</item>
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/light_blue_700</item>
         <item name="colorPrimaryDark">@color/light_blue_800</item>
         <item name="colorAccent">@color/light_blue_900</item>
+    </style>
+
+    <style name="ClubToolbar" parent="Widget.AppCompat.Toolbar">
+        <!-- 设置该属性解决 Toolbar 右边空白部分-->
+        <item name="contentInsetStart">0dp</item>
     </style>
 
 </resources>

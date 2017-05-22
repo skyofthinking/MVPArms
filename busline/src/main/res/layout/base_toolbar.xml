@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar android:id="@+id/base_toolbar"
+                                   xmlns:android="http://schemas.android.com/apk/res/android"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="?attr/actionBarSize"
+                                   android:background="?attr/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/toolbar_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:onClick="onLeftClick"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/toolbar_padding"
+            android:paddingRight="@dimen/toolbar_padding">
+
+            <ImageView
+                android:id="@+id/toolbar_left_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"/>
+
+            <TextView
+                android:id="@+id/toolbar_left_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/toolbar_image_text_margin"
+                android:duplicateParentState="true"
+                android:text="返回"
+                android:textColor="@color/toolbar_text"/>
+
+            <ImageView
+                android:id="@+id/toolbar_left_text_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_keyboard_arrow_down_white_24dp"
+                android:duplicateParentState="true"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/toolbar_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/app_name"
+            android:textColor="@color/toolbar_text"/>
+
+        <ImageView
+            android:id="@+id/toolbar_title_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <LinearLayout
+            android:id="@+id/toolbar_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:onClick="onRightClick"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/toolbar_padding"
+            android:paddingRight="@dimen/toolbar_padding">
+
+            <TextView
+                android:id="@+id/toolbar_right_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/toolbar_image_text_margin"
+                android:duplicateParentState="true"
+                android:text="关闭"
+                android:textColor="@color/toolbar_text"/>
+
+            <ImageView
+                android:id="@+id/toolbar_right_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

@@ -1,0 +1,10 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Toolbar 左右两个按键的 padding 用于扩大点击范围 -->
+    <dimen name="toolbar_padding">14dp</dimen>
+    <!-- Toolbar 图片与文本框的间距 -->
+    <dimen name="toolbar_image_text_margin">4dp</dimen>
+</resources>
