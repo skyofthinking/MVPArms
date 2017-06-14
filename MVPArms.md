@@ -1,5 +1,5 @@
 # MVPArms 
-[ ![Bintray](https://img.shields.io/badge/bintray-v2.0.3-brightgreen.svg) ](https://bintray.com/jessyancoding/maven/MVPArms/2.0.3/link)
+[ ![Bintray](https://img.shields.io/badge/bintray-v2.1.0-brightgreen.svg) ](https://bintray.com/jessyancoding/maven/MVPArms/2.1.0/link)
 [ ![Build Status](https://travis-ci.org/JessYanCoding/MVPArms.svg?branch=master) ](https://travis-ci.org/JessYanCoding/MVPArms)
 [ ![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat-square) ](https://developer.android.com/about/versions/android-4.0.3.html)
 [ ![License](http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square) ](http://www.apache.org/licenses/LICENSE-2.0)
@@ -9,7 +9,7 @@
 
 ## Usage
 > New Project
->> 如果你想构建一个全新的项目,直接将整个项目 **clone** (或者下载) 下来,直接将 **Demo** 作为主 **Module** (建议将 arms Module 删除,并使用 **Gradle** 远程依赖本框架,便于更新),再将项目包名改成自己的包名, **Demo** 包含可以直接使用的包结构,一个主流的 `MVP`+`Dagger2`+`Retrofit`+`Rxjava` 框架就这样轻松的构建成功了,现在你再参考 **Demo Mvp** 包下的 **UserActivity** 的格式,[使用 Template 在对应包下自动生成 MVP , Dagger2 相关类](https://github.com/JessYanCoding/MVPArmsTemplate),配合查阅 [Wiki 文档](https://github.com/JessYanCoding/MVPArms/wiki) 慢慢掌握本框架,看再多文章不如早点在项目中使用它,在实践中学习总是最快的
+>> 如果你想构建一个全新的项目,直接将整个项目 **clone** (或者下载) 下来,再将 **app** 作为主 **Module** (建议将 **arms Module** 删除,并使用 **Gradle** [远程依赖](https://github.com/JessYanCoding/MVPArms/wiki#1.1)本框架,便于更新),最后将项目包名改成自己的包名, **app Module** 包含可以直接使用的包结构,一个主流的 `MVP`+`Dagger2`+`Retrofit`+`Rxjava` 框架就这样轻松的构建成功了,现在你再参考 **Mvp** 包下的 **UserActivity** 的格式,[使用 Template 自动生成 MVP , Dagger2 相关类](https://github.com/JessYanCoding/MVPArmsTemplate),配合查阅 [Wiki 文档](https://github.com/JessYanCoding/MVPArms/wiki) 慢慢掌握本框架,看再多文章不如早点在项目中使用它,在实践中学习总是最快的
  
 > Old Project
 >> [老项目想引入此框架,可以参考 Wiki 文档 ,写的非常详细](https://github.com/JessYanCoding/MVPArms/wiki)
@@ -72,6 +72,7 @@
  
  
 ## Update
+* Tuesday, 13 June 2017: [**ProgressManager**](https://github.com/JessYanCoding/ProgressManager)
 * Wednesday, 31 May 2017: [**Template**](https://github.com/JessYanCoding/MVPArmsTemplate)
 * Monday, 24 April 2017: [**AppDelegate**](https://github.com/JessYanCoding/MVPArms/wiki#3.12)
 * Thursday, 13 April 2017: [**RepositoryManager**](https://github.com/JessYanCoding/MVPArms/wiki#2.3)
