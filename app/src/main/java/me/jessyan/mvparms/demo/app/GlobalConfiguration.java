@@ -41,6 +41,7 @@ import me.jessyan.mvparms.demo.mvp.model.api.Api;
 import me.jessyan.mvparms.demo.mvp.model.api.cache.CommonCache;
 import me.jessyan.mvparms.demo.mvp.model.api.service.CommonService;
 import me.jessyan.mvparms.demo.mvp.model.api.service.UserService;
+import me.jessyan.progressmanager.ProgressManager;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -65,7 +66,7 @@ public class GlobalConfiguration implements ConfigModule {
                         /* 这里可以先客户端一步拿到每一次http请求的结果,可以解析成json,做一些操作,如检测到token过期后
                            重新请求token,并重新执行请求 */
                         try {
-                            if (!TextUtils.isEmpty(httpResult) && RequestInterceptor.isJson(response.body())) {
+                            if (!TextUtils.isEmpty(httpResult) && RequestInterceptor.isJson(response.body().contentType())) {
                                 JSONArray array = new JSONArray(httpResult);
                                 JSONObject object = (JSONObject) array.get(0);
                                 String login = object.getString("login");
@@ -131,6 +132,8 @@ public class GlobalConfiguration implements ConfigModule {
                 })
                 .okhttpConfiguration((context1, okhttpBuilder) -> {//这里可以自己自定义配置Okhttp的参数
                     okhttpBuilder.writeTimeout(10, TimeUnit.SECONDS);
+                    //开启使用一行代码监听 Retrofit／Okhttp 上传下载进度监听,以及 Glide 加载进度监听 详细使用方法查看 https://github.com/JessYanCoding/ProgressManager
+                    ProgressManager.getInstance().with(okhttpBuilder);
                 })
                 .rxCacheConfiguration((context1, rxCacheBuilder) -> {//这里可以自己自定义配置RxCache的参数
                     rxCacheBuilder.useExpiredDataIfLoaderNotAvailable(true);
@@ -254,7 +257,7 @@ public class GlobalConfiguration implements ConfigModule {
         } else if (httpException.code() == 403) {
             msg = "请求被服务器拒绝";
         } else if (httpException.code() == 307) {
-            msg = "请求被重定向其他页面";
+            msg = "请求被重定向到其他页面";
         } else {
             msg = httpException.message();
         }
