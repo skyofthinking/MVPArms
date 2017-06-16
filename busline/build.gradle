@@ -56,8 +56,12 @@ dependencies {
     //tools
     provided rootProject.ext.dependencies["javax.annotation"]
     annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
+    compile rootProject.ext.dependencies["progressmanager"]
     //view
-    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
+        exclude module: 'support-annotations'
+        exclude module: 'butterknife-annotations'
+    }
     compile rootProject.ext.dependencies["paginate"]
     //arms
     compile project(':arms')

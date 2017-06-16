@@ -1,6 +1,7 @@
 package io.github.skyofthinking.busline.ui.query;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import com.jess.arms.base.BaseActivity;
@@ -25,13 +26,13 @@ public class BusLineQueryActivity extends BaseActivity<BusLineQueryPresenter> im
     }
 
     @Override
-    public int initView() {
+    public int initView(Bundle savedInstanceState) {
         Timber.tag(TAG).w("initView");
         return R.layout.activity_bus_line_query;
     }
 
     @Override
-    public void initData() {
+    public void initData(Bundle savedInstanceState) {
         mPresenter.requestStation(true);
     }
 
@@ -48,7 +49,7 @@ public class BusLineQueryActivity extends BaseActivity<BusLineQueryPresenter> im
     @Override
     public void showMessage(@NonNull String message) {
         checkNotNull(message);
-        UiUtils.SnackbarText(message);
+        UiUtils.snackbarText(message);
     }
 
     @Override
